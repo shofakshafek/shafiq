@@ -1,0 +1,31 @@
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(6vmax,5vmax) scale(1.18)}}
+@keyframes floaty{0%,100%{translate:0 0}50%{translate:0 -14px}}
+@keyframes pulseCore{0%,100%{box-shadow:0 0 0 14px rgba(var(--fx),.1),0 0 90px var(--glow)}50%{box-shadow:0 0 0 26px rgba(var(--fx),.04),0 0 130px var(--glow)}}
+@keyframes pulseText{50%{opacity:.45}}
+@keyframes blink{50%{opacity:0}}
+@keyframes wordUp{to{transform:none}}
+@keyframes gradMove{to{background-position:-300% 0}}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@keyframes ripple{to{transform:scale(4);opacity:0}}
+@keyframes ping{to{transform:scale(3);opacity:0}}
+@keyframes scan{0%,100%{top:0}50%{top:calc(100% - 3px)}}
+@keyframes flow{to{stroke-dashoffset:-26}}
+@keyframes pulseNode{0%,100%{transform:scale(1)}50%{transform:scale(1.22)}}
+@keyframes glowPulse{50%{box-shadow:0 0 0 1px var(--line),0 28px 90px -16px var(--glow)}}
+@keyframes pageIn{from{opacity:0;translate:0 22px;filter:blur(8px)}}
+@keyframes pageOut{to{opacity:0;translate:0 -14px;filter:blur(6px)}}
+@keyframes linkIn{from{opacity:0;translate:-14px 0}}
+
+/* transisi tema: lingkaran meluas dari tombol */
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+::view-transition-old(root){z-index:1}::view-transition-new(root){z-index:2}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js [data-reveal]{opacity:1;translate:none;scale:none}
+  .w>span{transform:none}
+  .timeline::after{transform:none}
+  .marquee{overflow-x:auto}
+  #glow,#progress{display:none}
+}
