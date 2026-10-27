@@ -4,7 +4,7 @@ const SITE = {
   roles: ["Web Developer", "membuat sesuatu yang mungkin berguna", "senang berkolaborasi"],
   headline: "cukup menghidupi kehidupan",
   intro: "Hola! Aku Shafiq, seorang yang tertarik dengan dunia IT, programming, pengembangan website, dan teknologi. Aku senang belajar hal baru, mengeksplorasi ide, serta mencoba berbagai hal di bidang teknologi, mulai dari coding, cybersecurity, hingga pengembangan proyek digital. Aku terbuka untuk berdiskusi, berbagi ide, mencari solusi, dan belajar bersama siapa saja yang punya minat serupa.",
-  status: "Terbuka untkk kaloborasi",
+  status: "Terbuka untuk kaloborasi",
   location: "Jambi (Central Sumatra )",
   settings: { theme: "auto" },
 
