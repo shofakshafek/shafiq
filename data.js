@@ -49,7 +49,8 @@ interests: [
   projects: [
     { title: "Cypia Birthday", description: "Website ulang tahun interaktif berisi galeri foto, ucapan teman, surat spesial, countdown, dan musik sebagai kejutan di hari istimewa.", year: "2026", tags: ["React", "JavaScript", "Vite"], links: [{ label: "Kunjungi", url: "https://cypia-birthday.vercel.app/" }] },
         { title: "Ceci Birthday", description: "Website ulang tahun interaktif berisi galeri foto, ucapan, surat spesial, dan musik sebagai kejutan di hari istimewa.", year: "2026", tags: ["React", "JavaScript", "Vite"], links: [{ label: "Kunjungi", url: "https://ceci-s-birthday.vercel.app/" }] },
-        { title: "NaNachia Photo Booth", description: "Web photo booth interaktif dengan fitur custom frame, filter foto, stiker lucu, dan layout cetak yang bisa dikustomisasi.", year: "2026", tags: ["React", "Photo Booth", "Image Editor"], links: [{ label: "Kunjungi", url: "https://na-nachia-photo-booth.vercel.app/" }] }
+        { title: "NaNachia Photo Booth", description: "Web photo booth interaktif dengan fitur custom frame, filter foto, stiker lucu, dan layout cetak yang bisa dikustomisasi.", year: "2026", tags: ["React", "Photo Booth", "Image Editor"], links: [{ label: "Kunjungi", url: "https://na-nachia-photo-booth.vercel.app/" }] },
+        { title: "Catatan motivasi", description: "Website memberikan motivasi didalam catatan kecil.", year: "2026", tags: ["HTML", "Motivation", "CSS"], links: [{ label: "Kunjungi", url: "https://catatan-untukmu.vercel.app/" }] }
     ],
 
   collab: {
@@ -65,7 +66,6 @@ interests: [
       { title: "Kerjakan dan saling update", text: "Progres dibagikan berkala supaya arah tetap searah." },
       { title: "Rilis dan evaluasi", text: "Karya dipublikasikan, lalu kita tinjau apa yang bisa lebih baik." },
     ],
-    // Placeholder: ganti dengan kolaborator aslimu. avatar: tautan gambar (opsional), url kosong = "Belum diatur"
     people: [
       { name: "Ditya / Vinzy", role: "Cybersecurity, Fix support", note: "Pengembang bot WhatsApp", tags: ["Sahabat"], avatar: "", url: "https://dityya.vercel.app" },
       { name: "Feng Xiu / ikky", role: "Peretasan / Hacking", note: "Pengembang bug, Rat & bot WhatsApp", tags: ["Sahabat"], avatar: "", url: "" },
