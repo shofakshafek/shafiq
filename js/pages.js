@@ -221,7 +221,18 @@ dden>Gambar QRIS gagal dimuat. Periksa koneksi internet, lalu muat ulang halaman
     </div>`;
   };
 
-  const PAGES = [["home", "Home", "Beranda", home], ["personal", "Personal", "Personal", personal], ["social", "Social", "Social", social], ["project", "Project", "Project", project], ["collab", "Collaborator", "Collaborator", collab], ["donation", "Donation", "Donation", donation], ["support", "Support", "Support", support]];
+  
+  const PAGES = [
+    ["home", "Home", "Beranda", home],
+    ["personal", "Personal", "Personal", personal],
+    ["social", "Social", "Social", social],
+    ["project", "Project", "Project", project],
+    ["collab", "Collaborator", "Collaborator", collab],
+    ["donation", "Donation", "Donation", donation],
+    ["support", "Support", "Support", support]
+  ];
+
   const notFound = () => `<div class="wrap page-head"><h1 data-split>Halaman tidak ditemukan</h1><p class="lead">Alamat yang kamu buka tidak ada.</p><div class="actions"><a class="btn primary" href="#/home">Kembali ke Home</a></div></div>`;
+
   return { PAGES, notFound, initials };
 })();
