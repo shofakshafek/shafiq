@@ -1,4 +1,3 @@
-
 /* Tampilan setiap halaman. Semua teks berasal dari data.js. */
 window.Pages = (() => {
   const { esc, safeUrl, ic } = UI;
