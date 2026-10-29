@@ -8,7 +8,7 @@ const SITE = {
   location: "Jambi (Central Sumatra )",
   settings: { theme: "auto" },
 
-  contact: { email: "pembalaphutan@gmail.com", whatsapp: "6282261195070" },
+  contact: { email: "pembalaphutan@gmail.com", whatsapp: "6285181403500" },
 
   bio: [
     "Aku memiliki ketertarikan besar terhadap dunia teknologi informasi, terutama programming, pengembangan website, dan cybersecurity. Aku terus belajar secara mandiri, mencoba berbagai teknologi, serta mengembangkan kemampuan melalui eksperimen dan proyek kecil. Bagiku, dunia IT bukan sekadar tentang menulis kode, tetapi juga tentang memahami cara kerja sistem, memecahkan masalah, dan menciptakan sesuatu yang bermanfaat.",
