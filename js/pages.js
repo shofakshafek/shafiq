@@ -1,5 +1,3 @@
-
-/* Tampilan setiap halaman. Semua teks berasal dari data.js. */
 window.Pages = (() => {
   const { esc, safeUrl, ic } = UI;
   const S = SITE, D = S.donation, SUP = S.support, C = S.collab;
@@ -9,14 +7,12 @@ window.Pages = (() => {
   const head = (t, lead) => `<div class="wrap page-head"><h1 data-split>${esc(t)}</h1>${lead ? `<p class="lead" data-reveal style="--d:300ms">${esc(lead)}</p>` : ""}</div>`;
   const empty = (t, p, extra = "") => `<div class="empty" data-reveal><h2>${t}</h2><p>${p}</p>${extra}</div>`;
 
-  // Baris tautan
   const row = (icon, title, sub, href, external) => {
     const u = safeUrl(href);
     const body = `${ic(icon)}<span class="grow"><b>${esc(title)}</b><small>${esc(sub)}</small></span><span class="tag">${u ? "Buka" : "Belum diatur"}</span>`;
     return `<li>${u ? `<a class="row" href="${esc(u)}"${external ? ' target="_blank" rel="noopener noreferrer"' : ""}>${body}</a>` : `<div class="row off">${body}</div>`}</li>`;
   };
 
-  // Jam kecil (diperbarui oleh FX.tick). Zona waktu diatur di SITE.clock.
   const CK = S.clock || { place: "", label: "WIB" };
   const clock = (withDate) => `<span class="clk" data-clock><span class="clk-ic">${ic("sun", "day")}${ic("moon", "night")}</span>${CK.place ? `<b>${esc(CK.place)}</b>` : ""}${withDate ? '<span class="clk-d" data-clock-date></span>' : ""}<span class="clk-t"><time>--.--</time> ${esc(CK.label || "WIB")}</span></span>`;
 
@@ -147,7 +143,6 @@ window.Pages = (() => {
       </div>
     </div>`;
 
-  // SUPPORT: "Hubungi saya" (kartu memanjang) di atas, "Pertanyaan umum" di bawah.
   const fmtPhone = (n) => {
     const d = String(n || "").replace(/\D/g, "");
     if (d.startsWith("62") && d.length >= 10) { const r = d.slice(2); return `+62 ${r.slice(0, 3)}-${r.slice(3, 7)}-${r.slice(7)}`; }
@@ -160,7 +155,6 @@ window.Pages = (() => {
     const wa = c.whatsapp && `https://wa.me/${c.whatsapp}`;
     const H = SUP.help || { title: "Belum menemukan jawabannya?", text: "Kirim pertanyaanmu langsung lewat WhatsApp atau email." };
 
-    // Kanal utama: nilai kontak tampil besar, bisa disalin atau dibuka langsung.
     const main = (icon, title, value, copyValue, copyMsg, href, label, external) => `<li><article class="sup-card main" data-tilt>
         <span class="sup-ico">${ic(icon)}</span>
         <div class="sup-txt"><h3>${esc(title)}</h3><p class="sup-val">${esc(value)}</p></div>
@@ -170,7 +164,6 @@ window.Pages = (() => {
         </div>
       </article></li>`;
 
-    // Kanal pendukung: seluruh kartu adalah tautan.
     const link = (icon, title, text, href) => `<li><a class="sup-card sup-link" data-tilt href="${href}">
         <span class="sup-ico">${ic(icon)}</span>
         <div class="sup-txt"><h3>${esc(title)}</h3><p class="sup-val">${esc(text)}</p></div>
