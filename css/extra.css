@@ -1,0 +1,27 @@
+/* Iklan, pengumuman, Game Arcade, Settings. Warna memakai token tema di theme.css. */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.pm{position:fixed;inset:0;z-index:120;display:grid;place-items:center;padding:max(1rem,env(safe-area-inset-top)) 1rem max(1rem,env(safe-area-inset-bottom));background:rgba(2,6,20,.62);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);animation:pmIn .35s var(--ease)}
+.pm-card{position:relative;width:min(460px,100%);max-height:calc(100dvh - 2rem);overflow:auto;padding:1.6rem;border:1px solid var(--line);border-radius:24px;background:var(--surface-2);box-shadow:var(--shadow);animation:pmUp .5s var(--ease)}
+.pm-label{display:inline-block;padding:.15rem .65rem;border-radius:99px;font:700 .72rem var(--font);letter-spacing:.14em;color:#fff;background:var(--accent-grad)}
+.pm-card img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:14px;margin-top:1rem}
+.pm-card h2{margin:.9rem 0 .4rem;padding-right:2rem}.pm-card small{color:var(--muted)}
+.pm-act{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+.pm-x,.fa-x{position:absolute;top:.7rem;right:.7rem;width:36px;height:36px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:none;color:var(--ink);font-size:1.3rem;cursor:pointer}
+.pm button:disabled{opacity:.45;cursor:not-allowed}
+.fa{position:fixed;right:1.25rem;bottom:5.2rem;z-index:45;width:min(320px,100% - 2rem);padding:1rem 1rem 1rem 1.1rem;border:1px solid var(--line);border-radius:18px;background:var(--surface-2);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);box-shadow:var(--shadow);animation:pmUp .5s var(--ease)}
+.fa small{color:var(--accent-text);font-weight:700;letter-spacing:.12em;font-size:.68rem}.fa b{display:block;padding-right:1.8rem}.fa p{font-size:.88rem;color:var(--muted);margin:.2rem 0 .7rem}
+@media(max-width:700px){.fa{left:.75rem;right:.75rem;width:auto;bottom:calc(5.6rem + env(safe-area-inset-bottom))}}
+[data-ad-slot]{margin-top:2rem}.ban{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;min-height:96px;padding:1rem 1.2rem;border:1px dashed var(--line);border-radius:18px;background:var(--surface)}
+.ban>small{font-weight:700;letter-spacing:.12em;font-size:.68rem;color:var(--accent-text)}.ban>div{flex:1;min-width:200px}.ban p{color:var(--muted);font-size:.9rem}
+body[data-playing="1"] .fa{display:none}
+.gtools{display:grid;gap:.8rem;margin-bottom:1.4rem}.gtools input{width:100%;padding:.75rem 1rem;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--ink);font:inherit}
+.chip[aria-pressed="true"],.chip.on{background:var(--accent-grad);color:#fff;border-color:transparent}button.chip{cursor:pointer;font:inherit}
+.ggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1rem}
+.gcard{display:flex;flex-direction:column;border:1px solid var(--line);border-radius:20px;background:var(--surface);overflow:hidden;box-shadow:var(--shadow)}
+.gthumb{display:grid;place-items:center;height:110px;font-size:3rem;background:var(--accent-grad)}.gbody{padding:1rem;display:grid;gap:.4rem}.gbody small{color:var(--muted)}.gbody p{font-size:.92rem}.gbody .actions{margin-top:.4rem}
+.gbar{display:flex;flex-wrap:wrap;gap:.6rem;align-items:center;justify-content:space-between;margin-bottom:.8rem}.gbar span{display:flex;flex-wrap:wrap;gap:.4rem}
+.gstage{position:relative;width:100%;height:min(78vh,720px);min-height:420px;border:1px solid var(--line);border-radius:18px;overflow:hidden;background:#050b1e}.gstage iframe{width:100%;height:100%;border:0;display:block}
+.gstat{position:absolute;inset:0;display:grid;place-content:center;gap:.6rem;text-align:center;color:#e9f0ff;background:#050b1e;z-index:1}.gstat.hide{display:none}
+.setrow{display:grid;gap:.6rem;margin-bottom:.6rem}.setrow label{display:flex;gap:.6rem;align-items:center}
+@keyframes pmIn{from{opacity:0}}@keyframes pmUp{from{opacity:0;transform:translateY(18px) scale(.97)}}
+@media(prefers-reduced-motion:reduce){.pm,.pm-card,.fa{animation:none}}
