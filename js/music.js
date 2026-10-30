@@ -1,4 +1,3 @@
-/* Pemutar musik mengambang. Tampil hanya bila SITE.music.tracks berisi lagu (lihat data.js). */
 (() => {
   const T = ((SITE.music && SITE.music.tracks) || []).filter((t) => t && typeof t.src === "string" && t.src && !/^javascript:/i.test(t.src));
   if (!T.length) return;
