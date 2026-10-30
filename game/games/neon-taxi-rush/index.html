@@ -1,43 +1,96 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <meta name="theme-color" content="#101827">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1220">
   <title>Neon Taxi Rush</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="app">
     <header class="topbar">
-      <div class="brand"><span class="brand-icon">🚕</span><div><strong>NEON TAXI RUSH</strong><small>MINI ARCADE • PORTFOLIO EDITION</small></div></div>
-      <div class="stats"><div><small>SKOR</small><b id="score">0000</b></div><div><small>BEST</small><b id="best">0000</b></div><div><small>KECEPATAN</small><b id="speed">1x</b></div></div>
+      <div class="brand">
+        <span class="brand-icon">🚕</span>
+        <div>
+          <strong>NEON TAXI RUSH</strong>
+          <small>MINI ARCADE • PORTFOLIO EDITION</small>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div><small>SKOR</small><b id="score">0000</b></div>
+        <div><small>BEST</small><b id="best">0000</b></div>
+        <div><small>KECEPATAN</small><b id="speed">1x</b></div>
+      </div>
     </header>
+
     <section class="game-shell">
       <div class="scene">
-        <canvas id="game" aria-label="Game mengemudi taxi"></canvas>
-        <div class="hud"><span class="pill" id="status">SIAP JALAN</span><span class="pill coins">◆ <span id="coins">0</span></span></div>
+        <canvas id="game"></canvas>
+
+        <div class="hud">
+          <span class="pill" id="status">SIAP JALAN</span>
+          <span class="pill coins">◆ <span id="coins">0</span></span>
+        </div>
+
         <div class="overlay" id="overlay">
           <div class="modal">
             <div class="eyebrow">CITY DRIVER SIMULATOR</div>
             <div class="hero-car">🚕</div>
+
             <h1>NEON TAXI<br><em>RUSH</em></h1>
-            <p>Selip di antara lalu lintas, kumpulkan koin, dan jadilah sopir paling jago di kota neon.</p>
-            <button id="startBtn" class="primary">MULAI BERKENDARA <span>↗</span></button>
-            <div class="help">PC: ← → / A D &nbsp; • &nbsp; HP: tombol arah di bawah</div>
+
+            <p>
+              Selip di antara lalu lintas, kumpulkan koin,
+              dan jadilah sopir paling jago di kota neon.
+            </p>
+
+            <button id="startBtn" class="primary">
+              MULAI BERKENDARA <span>↗</span>
+            </button>
+
+            <div class="help">
+              PC: ← → / A D • HP: tombol arah di bawah
+            </div>
           </div>
         </div>
+
         <div class="overlay hidden" id="gameOver">
-          <div class="modal compact"><div class="eyebrow">SHIFT SELESAI</div><h2>WADUH, TABRAKAN!</h2><p>Skor akhir kamu</p><div class="final-score" id="finalScore">0</div><button id="restartBtn" class="primary">COBA LAGI ↻</button></div>
+          <div class="modal compact">
+            <div class="eyebrow">SHIFT SELESAI</div>
+            <h2>WADUH, TABRAKAN!</h2>
+            <p>Skor akhir kamu</p>
+            <div class="final-score" id="finalScore">0</div>
+            <button id="restartBtn" class="primary">
+              COBA LAGI ↻
+            </button>
+          </div>
         </div>
       </div>
+
       <div class="controls">
-        <div class="control-copy"><strong>JALANAN MILIKMU.</strong><span>Hindari mobil lain, ambil koin, jangan sampai nabrak.</span></div>
-        <div class="buttons"><button class="dir" id="leftBtn" aria-label="Belok kiri">←</button><button class="dir" id="rightBtn" aria-label="Belok kanan">→</button><button class="boost" id="boostBtn">⚡ BOOST</button></div>
+        <div class="control-copy">
+          <strong>JALANAN MILIKMU.</strong>
+          <span>
+            Hindari mobil lain, ambil koin, jangan sampai nabrak.
+          </span>
+        </div>
+
+        <div class="buttons">
+          <button class="dir" id="leftBtn" aria-label="Belok kiri">←</button>
+          <button class="dir" id="rightBtn" aria-label="Belok kanan">→</button>
+          <button class="boost" id="boostBtn">⚡ BOOST</button>
+        </div>
       </div>
     </section>
-    <footer><span>BUILT FOR FUN <b>✦</b></span><span>NEON CITY / 2026</span></footer>
+
+    <footer>
+      <span>BUILT FOR FUN <b>✦</b></span>
+      <span>NEON CITY / 2026</span>
+    </footer>
   </main>
+
   <script src="game.js"></script>
 </body>
 </html>
