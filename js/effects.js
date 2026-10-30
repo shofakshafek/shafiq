@@ -1,4 +1,3 @@
-/* Efek halus: progres scroll, muncul lembut saat di-scroll, toast, dan jam. */
 window.FX = (() => {
   const { $, $$ } = UI, root = document.documentElement;
   const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -19,7 +18,6 @@ window.FX = (() => {
   let tt;
   const toast = (msg) => { const t = $("#toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(tt); tt = setTimeout(() => t.classList.remove("show"), 2200); };
 
-  /* Jam: zona waktu diatur di SITE.clock (data.js). Hanya menit yang diperbarui. */
   const tz = (SITE.clock && SITE.clock.timezone) || "Asia/Jakarta";
   const tf = new Intl.DateTimeFormat("id-ID", { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: tz });
   const df = new Intl.DateTimeFormat("id-ID", { weekday: "long", day: "numeric", month: "short", year: "numeric", timeZone: tz });
@@ -50,4 +48,4 @@ window.FX = (() => {
   const refreshColors = () => {};
   onScroll();
   return { bind, toast, refreshColors, reduced, tick };
-})();
+})(); 
