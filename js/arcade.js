@@ -1,9 +1,7 @@
-/* SHFQ Game Arcade (#/games) dan Settings (#/settings). */
 (() => {
   const { esc, ic, $, $$ } = UI, GK = "shfq.games.v1";
   let games = [], q = "", cat = "Semua", frame = null, timer = 0, paused = false;
 
-  /* --- penyimpanan progres game (divalidasi saat dibaca) --- */
   const get = () => {
     let o = {}; try { o = JSON.parse(localStorage.getItem(GK)) || {}; } catch (e) { console.warn("[Arcade] data rusak, direset:", e); }
     const ids = new Set(games.map((g) => g.id)), arr = (a) => (Array.isArray(a) ? a.filter((x) => typeof x === "string") : []);
@@ -12,7 +10,6 @@
   };
   const put = (s) => { try { localStorage.setItem(GK, JSON.stringify(s)); } catch (e) { FX.toast("Progres tidak dapat disimpan"); console.warn(e); } };
 
-  /* --- halaman Game Arcade --- */
   const arcadeHTML = () => `<div class="wrap page-head"><h1>SHFQ Game Arcade</h1><p class="lead">Mini platform game di dalam portofolio. Setiap game berjalan terisolasi di iframe sandbox.</p></div>
     <div class="wrap" id="arc"><p class="note" id="arc-load" role="status">Memuat game…</p></div>
     <div class="wrap"><div data-ad-slot="arcade"></div></div>`;
@@ -35,7 +32,6 @@
     const i = $("#gq"); if (document.activeElement === document.body && q) { i.focus(); i.setSelectionRange(q.length, q.length); }
   };
 
-  /* --- pemutar game --- */
   const stop = () => { clearTimeout(timer); if (frame) { frame.src = "about:blank"; frame.remove(); } frame = null; paused = false; document.body.dataset.playing = "0"; };
   const send = (cmd) => frame && frame.contentWindow && frame.contentWindow.postMessage({ type: "shfq:cmd", cmd }, "*");
   const play = (id) => {
@@ -54,7 +50,6 @@
     frame.addEventListener("error", fail); timer = setTimeout(fail, 8000);
   };
 
-  /* pesan dari game: hanya dari iframe aktif, bentuk dan nilai divalidasi */
   addEventListener("message", (e) => {
     if (!frame || e.source !== frame.contentWindow) return;
     const m = e.data; if (!m || typeof m !== "object" || typeof m.type !== "string") return;
@@ -65,7 +60,6 @@
   });
   window.addEventListener("pagerendered", (e) => { if (e.detail !== "games") stop(); });
 
-  /* --- Settings --- */
   const settingsHTML = () => `<div class="wrap page-head"><h1>Settings</h1><p class="lead">Preferensi tersimpan hanya di perangkat ini.</p></div>
     <div class="wrap sup" id="set">
       <section class="sup-sec"><h2>Tampilan & iklan</h2><div class="setrow"><label><input type="checkbox" id="s-float"> Tampilkan iklan melayang</label><label><input type="checkbox" id="s-banner"> Tampilkan banner iklan</label></div>
@@ -92,7 +86,6 @@
     all: ["Hapus semua data lokal situs ini (tema, game, iklan, pengaturan)?", () => Promo.resetAll()],
   };
 
-  /* --- delegasi event (didaftarkan sekali) --- */
   document.addEventListener("click", (e) => {
     const t = e.target, pl = t.closest("[data-play]"), fv = t.closest("[data-fav]"), ct = t.closest("[data-cat]"), cm = t.closest("[data-cmd]"), rs = t.closest("[data-reset]"), an = t.closest("[data-ann]");
     if (pl) return play(pl.dataset.play);
