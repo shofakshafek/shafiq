@@ -1,0 +1,1 @@
+{"id":"snake-evolution","name":"Snake Evolution","description":"Snake klasik yang makin cepat setiap kali makan.","version":"1.0.0","developer":"SHFQ DEV","category":"Arcade","icon":"🐍","entry":"index.html","controls":["Panah / WASD","Geser layar atau tombol arah","P / Spasi: jeda","R: ulang"],"settings":[],"minimum":"Browser modern dengan canvas"}
