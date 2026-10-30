@@ -1,5 +1,3 @@
-/* SHFQ Advertisement Engine + Announcement Center.
-   Konfigurasi: config/advertisements.json dan config/announcements.json. Data statistik hanya di localStorage perangkat ini. */
 window.Promo = (() => {
   const { esc, $ } = UI, K = "shfq.promo.v1", SK = "shfq.settings.v1", DAY = 864e5;
   const read = (k, d) => { try { const v = JSON.parse(localStorage.getItem(k)); return v && typeof v === "object" && !Array.isArray(v) ? v : d; } catch { return d; } };
@@ -18,7 +16,6 @@ window.Promo = (() => {
     return /^(https?:|mailto:|tel:|#\/)/i.test(u) ? u : "";
   };
 
-  /* --- kelayakan campaign --- */
   const hist = (map, id, ver) => { const h = map[id] || (map[id] = { imp: 0, click: 0, skip: 0, f: 0, last: 0, ver }); if (h.ver !== ver) { h.ver = ver; h.f = 0; h.last = 0; } return h; };
   const eligible = (c, map, kind, now = Date.now()) => {
     if (!c || typeof c.id !== "string" || c.active !== true) return false;
@@ -35,12 +32,10 @@ window.Promo = (() => {
   };
   const pick = (list) => { const w = list.map((c) => Math.max(1, n(c.priority, 1))), t = w.reduce((a, b) => a + b, 0); let r = Math.random() * t; return list.find((_, i) => (r -= w[i]) < 0) || list[0]; };
 
-  /* --- konfigurasi --- */
   const load = (path, key) => fetch(path, { cache: "no-cache" }).then((r) => { if (!r.ok) throw new Error(path + " HTTP " + r.status); return r.json(); }).then((j) => (Array.isArray(j[key]) ? j[key] : (() => { throw new Error(path + ": format salah"); })()));
   let ADS = [], ANN = [];
   const ready = Promise.all([load("config/advertisements.json", "campaigns").then((a) => (ADS = a), (e) => console.error("[Ads]", e)), load("config/announcements.json", "items").then((a) => (ANN = a), (e) => console.error("[Announcement]", e))]);
 
-  /* --- modal --- */
   const busy = () => document.body.dataset.playing === "1" || $(".pm") || /^(INPUT|TEXTAREA|SELECT)$/.test((document.activeElement || {}).tagName || "") || document.querySelector("form");
   const modal = (c, o) => new Promise((done) => {
     const prev = document.activeElement, el = document.createElement("div"), u = url(c.targetUrl), ext = /^https?:/i.test(u);
@@ -72,7 +67,6 @@ window.Promo = (() => {
     await modal(c, { label: "ANNOUNCEMENT", footer: "SHFQ ANNOUNCEMENT CENTER", delay: 0 });
   };
 
-  /* --- iklan melayang & banner --- */
   const floating = () => {
     const s = settings(); if (!s.float || busy() || $(".fa")) return;
     const list = ADS.filter((c) => eligible(c, st.ads, "floating")); if (!list.length) return;
@@ -97,7 +91,6 @@ window.Promo = (() => {
     });
   };
 
-  /* --- antrean: pengumuman dulu, lalu iklan interstitial, lalu iklan melayang --- */
   let started = false, tries = 0;
   const run = async () => {
     if (busy()) { if (tries++ < 8) setTimeout(run, 4000); return; }
