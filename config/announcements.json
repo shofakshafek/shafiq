@@ -16,14 +16,14 @@
     },
     {
       "id": "wa-number-info",
-      "title": "INFORMASI TERBARU",
-      "description": "Gw sudah mengganti nomor WhatsApp. Silakan gunakan nomor terbaru untuk menghubungi gw.",
+      "title": "pemberitahuan!",
+      "description": "admin ganti nomor WhatsApp. Silakan gunakan nomor terbaru untuk menghubungi admin.",
       "targetUrl": "{{whatsapp}}",
-      "buttonText": "HUBUNGI WHATSAPP BARU",
+      "buttonText": "klik disini",
       "active": false,
       "priority": 9,
       "startDate": "2026-10-30",
-      "endDate": "2027-12-31",
+      "endDate": "2027-01-20",
       "displayFrequency": "once",
       "version": 1
     }
