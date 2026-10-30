@@ -1,4 +1,3 @@
-/* Helper bersama: escape HTML, validasi URL, ikon SVG. */
 window.UI = (() => {
   const esc = (v) => String(v ?? "").replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
   const safeUrl = (u) => (/^(https?:|mailto:|tel:)/i.test(u || "") ? u : "");
