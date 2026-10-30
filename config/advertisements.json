@@ -1,0 +1,43 @@
+{
+  "version": 2,
+  "campaigns": [
+    {
+      "id": "arcade-launch",
+      "title": "SHFQ GAME ARCADE SUDAH BUKA!",
+      "description": "Snake, Space Shooter, dan Memory Challenge bisa dimainkan langsung di browser. Gratis, tanpa instal.",
+      "image": "",
+      "label": "pemberitahuan!",
+      "type": "interstitial",
+      "targetUrl": "#/games",
+      "buttonText": "MAIN SEKARANG",
+      "active": false,
+      "priority": 5,
+      "startDate": "2026-10-30",
+      "endDate": "2027-12-31",
+      "displayFrequency": "session",
+      "skipDelay": 5,
+      "maxImpressions": 0,
+      "placement": ["interstitial", "floating", "banner"],
+      "campaignVersion": 1
+    },
+    {
+      "id": "wa-number-change",
+      "title": "Per-tanggal 30, ganti nomer WhatsApp",
+      "description": "Nomor WhatsApp terbaru sudah tersedia. Hubungi admin melalui nomor baru.",
+      "image": "",
+      "label": "pemberitahuan!",
+      "type": "interstitial",
+      "targetUrl": "{{whatsapp}}",
+      "buttonText": "hubungi disini",
+      "active": true,
+      "priority": 9,
+      "startDate": "2026-10-30",
+      "endDate": "2027-01-20",
+      "displayFrequency": "session",
+      "skipDelay": 5,
+      "maxImpressions": 0,
+      "placement": ["interstitial", "floating"],
+      "campaignVersion": 1
+    }
+  ]
+}
