@@ -1,4 +1,3 @@
-/* Jembatan game -> arcade (postMessage). Game berjalan di iframe sandbox tanpa akses ke halaman utama. */
 window.B = {
   hs: 0, onCmd() {},
   send(t, d) { parent.postMessage({ type: "shfq:" + t, ...d }, "*"); },
