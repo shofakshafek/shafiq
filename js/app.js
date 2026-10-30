@@ -1,8 +1,6 @@
-/* Router, navigasi, tema, dan penghubung semua modul. */
 (() => {
   const { esc, ic, $, $$ } = UI, { PAGES, notFound, initials, clock } = Pages, S = SITE, root = document.documentElement;
 
-  /* --- tema --- */
   let saved = null; try { saved = localStorage.getItem("theme"); } catch {}
   if (!saved && S.settings.theme !== "auto") root.dataset.theme = S.settings.theme;
   const isDark = () => root.dataset.theme === "dark";
@@ -13,7 +11,6 @@
     if (!s && S.settings.theme === "auto") applyTheme(e.matches ? "dark" : "light");
   });
 
-  /* --- kerangka: nav, footer, tombol atas --- */
   $("#ld-mark").textContent = initials;
   $("#nav").innerHTML = `<div class="wrap bar">
     <a class="brand" href="#/home"><span class="mark">${esc(initials)}</span>${esc(S.name)}</a>
@@ -36,7 +33,6 @@
   document.addEventListener("keydown", (e) => e.key === "Escape" && setMenu(false));
   $(".skip").onclick = (e) => { e.preventDefault(); $("#main").focus(); };
 
-  /* tombol tema: lingkaran meluas dari posisi tombol (View Transitions), dengan fallback */
   $("#theme").onclick = (e) => {
     const t = isDark() ? "light" : "dark";
     try { localStorage.setItem("theme", t); } catch {}
@@ -48,7 +44,6 @@
     ).catch(() => {});
   };
 
-  /* indikator pil yang meluncur di menu desktop */
   const place = () => {
     const a = $("#links a[aria-current]"), ind = $(".ind");
     if (!a || innerWidth <= 860) { ind.style.opacity = 0; return; }
@@ -58,7 +53,6 @@
   addEventListener("resize", place);
   if (document.fonts) document.fonts.ready.then(place);
 
-  /* --- delegasi: FAQ akordeon, salin teks --- */
   const legacyCopy = (v) => new Promise((res, rej) => {
     const t = document.createElement("textarea");
     t.value = v; t.setAttribute("readonly", ""); t.style.cssText = "position:fixed;top:0;left:0;opacity:0";
@@ -79,7 +73,6 @@
     }
   });
 
-  /* --- QRIS: status muat gambar --- */
   const bindQr = () => {
     const fig = $("[data-qr]"); if (!fig) return;
     const img = $("img", fig);
@@ -89,7 +82,6 @@
     if (img.complete) img.naturalWidth ? ok() : bad();
   };
 
-  /* --- router dengan transisi halaman --- */
   let first = true, cur = null, token = 0;
   async function route() {
     const my = ++token, id = location.hash.replace(/^#\/?/, "") || "home";
@@ -111,7 +103,6 @@
   addEventListener("hashchange", route);
   route();
 
-  /* --- loader awal selesai -> mulai animasi kata --- */
   const ready = () => { document.body.classList.add("ready"); $("#loader").classList.add("done"); setTimeout(() => $("#loader").remove(), 900); };
   let done = false; const go = () => { if (!done) { done = true; setTimeout(ready, 450); } };
   document.readyState === "complete" ? go() : addEventListener("load", go);
