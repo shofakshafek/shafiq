@@ -2,6 +2,19 @@
   "version": 1,
   "items": [
     {
+      "id": "Whatsapp-Group-Bot",
+      "title": "GABUNG GRUP WHATSAPP!",
+      "description": "Grup bot WhatsApp disini yaa!!",
+      "targetUrl": "https://chat.whatsapp.com/Cw4Sbh3wuMZ02CqmoinaB1?s=cl&p=a&iam=2",
+      "buttonText": "GABUNG SEKARANG",
+      "active": true,
+      "priority": 10,
+      "startDate": "2026-11-25",
+      "endDate": "2027-12-31",
+      "displayFrequency": "once",
+      "version": 1
+    },
+    {
       "id": "site-update-oct-2026",
       "title": "INFORMASI TERBARU",
       "description": "Website SHFQ DEV diperbarui: ada Game Arcade, pusat pengumuman, dan pengaturan tampilan. Semua data portofolio lama tetap sama.",
@@ -16,10 +29,10 @@
     },
     {
       "id": "wa-number-info",
-      "title": "pemberitahuan!",
-      "description": "admin ganti nomor WhatsApp. Silakan gunakan nomor terbaru untuk menghubungi admin.",
+      "title": "PEMBERITAHUAN!",
+      "description": "Admin ganti nomor WhatsApp. Silakan gunakan nomor terbaru untuk menghubungi admin.",
       "targetUrl": "{{whatsapp}}",
-      "buttonText": "klik disini",
+      "buttonText": "KLIK DI SINI",
       "active": true,
       "priority": 9,
       "startDate": "2026-10-30",
