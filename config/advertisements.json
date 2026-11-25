@@ -2,6 +2,29 @@
   "version": 2,
   "campaigns": [
     {
+      "id": "wa-bot-group",
+      "title": "GRUP WHATSAPP BOT SHFQ DEV",
+      "description": "Grup bot WhatsApp.",
+      "image": "",
+      "label": "informasi",
+      "type": "interstitial",
+      "targetUrl": "https://chat.whatsapp.com/Cw4Sbh3wuMZ02CqmoinaB1?s=cl&p=a&iam=2",
+      "buttonText": "BERGABUNG",
+      "active": true,
+      "priority": 10,
+      "startDate": "2026-11-25",
+      "endDate": "2027-12-31",
+      "displayFrequency": "session",
+      "skipDelay": 5,
+      "maxImpressions": 0,
+      "placement": [
+        "interstitial",
+        "floating",
+        "banner"
+      ],
+      "campaignVersion": 1
+    },
+    {
       "id": "arcade-launch",
       "title": "SHFQ GAME ARCADE SUDAH BUKA!",
       "description": "Snake, Space Shooter, dan Memory Challenge bisa dimainkan langsung di browser. Gratis, tanpa instal.",
@@ -17,7 +40,11 @@
       "displayFrequency": "session",
       "skipDelay": 5,
       "maxImpressions": 0,
-      "placement": ["interstitial", "floating", "banner"],
+      "placement": [
+        "interstitial",
+        "floating",
+        "banner"
+      ],
       "campaignVersion": 1
     },
     {
@@ -36,7 +63,10 @@
       "displayFrequency": "session",
       "skipDelay": 5,
       "maxImpressions": 0,
-      "placement": ["interstitial", "floating"],
+      "placement": [
+        "interstitial",
+        "floating"
+      ],
       "campaignVersion": 1
     }
   ]
